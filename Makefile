@@ -6,7 +6,7 @@
 #    By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/05/22 19:33:48 by ebaudet           #+#    #+#              #
-#    Updated: 2014/05/22 19:44:33 by ebaudet          ###   ########.fr        #
+#    Updated: 2014/05/22 21:00:42 by ebaudet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRC_SRV	= $(addprefix srcs_serveur/, $(F_SRV))
 OBJ_SRV	= $(SRC_SRV:srcs_serveur/%.c=.obj_serveur/%.o)
 
 CLIENT	= client
-F_CLT	= main.c
+F_CLT	= main.c app.c init_connection.c end_connection.c read_server.c \
+		write_server.c
 SRC_CLT	= $(addprefix srcs_client/, $(F_CLT))
 OBJ_CLT	= $(SRC_CLT:srcs_client/%.c=.obj_client/%.o)
 
