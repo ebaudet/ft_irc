@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 20:16:30 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/22 22:19:49 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/23 16:36:13 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int		init_connection(const char *address, int port);
 /*
 ** app.c
 */
-void	app(const char *address, const char *name);
+void	app(const char *address, const int port);
 
 #endif

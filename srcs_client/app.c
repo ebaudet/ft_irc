@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 20:28:55 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/22 22:20:48 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/23 16:37:38 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	app(const char *address, const int port)
 	char		*line;
 
 	/* send our name */
-	write_server(sock, name);
+	/*write_server(sock, name);*/
 
 	while(1)
 	{
@@ -47,7 +47,11 @@ void	app(const char *address, const int port)
 		/* something from standard input : i.e keyboard */
 		if(FD_ISSET(STDIN_FILENO, &rdfs))
 		{
-
+			if (get_next_line(STDIN_FILENO, &line) > 0)
+			{
+				write_server(sock, line);
+			}
+			/*
 			fgets(buffer, BUF_SIZE - 1, stdin);
 			{
 				char *p = NULL;
@@ -58,11 +62,12 @@ void	app(const char *address, const int port)
 				}
 				else
 				{
-					/* fclean */
+					// fclean
 					buffer[BUF_SIZE - 1] = 0;
 				}
 			}
 			write_server(sock, buffer);
+			*/
 		}
 		else if(FD_ISSET(sock, &rdfs))
 		{
