@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 20:25:16 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/22 20:57:20 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/22 22:18:45 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <errno.h>
 #include <netdb.h>
 
-int		init_connection(const char *address)
+int		init_connection(const char *address, int port)
 {
 	SOCKET			sock;
 	SOCKADDR_IN		sin;
@@ -37,7 +37,7 @@ int		init_connection(const char *address)
 	}
 
 	sin.sin_addr = *(IN_ADDR *) hostinfo->h_addr;
-	sin.sin_port = htons(PORT);
+	sin.sin_port = htons(port);
 	sin.sin_family = AF_INET;
 
 	if (connect(sock,(SOCKADDR *) &sin, sizeof(SOCKADDR)) == SOCKET_ERROR)

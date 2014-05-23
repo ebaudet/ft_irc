@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 20:28:55 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/22 20:50:03 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/22 22:20:48 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 #include "libft.h"
 #include "client.h"
 
-void	app(const char *address, const char *name)
+void	app(const char *address, const int port)
 {
-	SOCKET sock = init_connection(address);
-	char buffer[BUF_SIZE];
-
-	fd_set rdfs;
+	SOCKET		sock = init_connection(address, port);
+	char		buffer[BUF_SIZE];
+	fd_set		rdfs;
+	char		*line;
 
 	/* send our name */
 	write_server(sock, name);
@@ -47,6 +47,7 @@ void	app(const char *address, const char *name)
 		/* something from standard input : i.e keyboard */
 		if(FD_ISSET(STDIN_FILENO, &rdfs))
 		{
+
 			fgets(buffer, BUF_SIZE - 1, stdin);
 			{
 				char *p = NULL;

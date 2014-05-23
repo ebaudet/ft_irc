@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 20:16:30 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/22 20:58:45 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/22 22:19:49 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	end_connection(int sock);
 /*
 ** init_connection.c
 */
-int		init_connection(const char *address);
+int		init_connection(const char *address, int port);
 
 /*
 ** app.c
