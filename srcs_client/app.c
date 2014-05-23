@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 20:28:55 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/23 16:37:38 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/23 17:25:41 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ void	app(const char *address, const int port)
 		if(FD_ISSET(STDIN_FILENO, &rdfs))
 		{
 			if (get_next_line(STDIN_FILENO, &line) > 0)
-			{
 				write_server(sock, line);
-			}
 			/*
 			fgets(buffer, BUF_SIZE - 1, stdin);
 			{
@@ -78,7 +76,8 @@ void	app(const char *address, const int port)
 				printf("Server disconnected !\n");
 				break;
 			}
-			puts(buffer);
+			ft_putstr(buffer);
+			// puts(buffer);
 		}
 	}
 

@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 19:41:44 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/22 19:58:48 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/23 17:25:10 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include "serveur.h"
+#include "libft.h"
 
 void	client_read(t_env *e, int cs)
 {
@@ -29,6 +30,7 @@ void	client_read(t_env *e, int cs)
 	}
 	else
 	{
+		ft_putstr(e->fds[cs].buf_read);
 		i = 0;
 		while (i < e->maxfd)
 		{

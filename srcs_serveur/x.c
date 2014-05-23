@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 19:41:45 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/22 19:59:19 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/23 17:28:44 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		x_int(int err, int res, char *str, char *file, int line)
 {
 	if (res == err)
 	{
-		fprintf(stderr, "%s error (%s, %d): %s\n", 
+		fprintf(stderr, "%s error (%s, %d): %s\n",
 			str, file, line, strerror(errno));
 		exit(1);
 	}
@@ -31,7 +31,7 @@ void	*x_void(void *err, void *res, char *str, char *file, int line)
 {
 	if (res == err)
 	{
-		fprintf(stderr, "%s error (%s, %d): %s\n", 
+		fprintf(stderr, "%s error (%s, %d): %s\n",
 			str, file, line, strerror(errno));
 		exit(1);
 	}

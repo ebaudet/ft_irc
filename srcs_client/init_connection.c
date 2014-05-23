@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 20:25:16 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/23 16:38:57 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/23 17:22:22 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,19 @@ int		init_connection(const char *address, int port)
 		perror("socket()");
 		exit(errno);
 	}
-
 	hostinfo = gethostbyname(address);
 	if (hostinfo == NULL)
 	{
 		fprintf (stderr, "Unknown host %s.\n", address);
 		exit(EXIT_FAILURE);
 	}
-
 	sin.sin_addr = *(IN_ADDR *) hostinfo->h_addr;
 	sin.sin_port = htons(port);
 	sin.sin_family = AF_INET;
-
 	if (connect(sock,(SOCKADDR *) &sin, sizeof(SOCKADDR)) == SOCKET_ERROR)
 	{
-		perror("connect() pouet ");
+		perror("connect()");
 		exit(errno);
 	}
-
 	return (sock);
 }

@@ -6,12 +6,12 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/22 19:41:45 by ebaudet           #+#    #+#             */
-/*   Updated: 2014/05/22 19:59:02 by ebaudet          ###   ########.fr       */
+/*   Updated: 2014/05/23 17:26:43 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-# include <sys/select.h>
+#include <sys/select.h>
 #include "serveur.h"
 
 void	init_fd(t_env *e)
